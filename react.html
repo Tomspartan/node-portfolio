@@ -52,8 +52,8 @@
 
           this.setState({
             message: {
-              type: "error",
-              body: "We're not done yet"
+              type: name ? "success" : "error",
+              body: name ? "Welcome to React, " + name : "You must enter a name"
             }
           });
         }
@@ -63,7 +63,7 @@
 
           return (
             <div>
-              <label>Name: <input ref="NameInput" type="text" /></label>
+              <label>Name: <input ref="nameInput" type="text" /></label>
               <button onClick={this.buttonClicked}>Click when done</button>
 
               <MessageBox type={msg.type} message={msg.body}/>
